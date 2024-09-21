@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Futura Condensed';
+    src: url('./fonts/Futura\ Condensed.ttf');
+}
+
+@font-face {
+    font-family: 'Futura Condensed Demi';
+    src: url('./fonts/Futura\ Condensed\ Demi.ttf');
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.logo{
+    margin-left: 15px;
+    width: 10vw;
+}
+
+.logo img{
+    width: 100%;
+    height: auto;
+}
+
+.mainmenu li{
+    list-style: none;
+    margin-right: 25px;
+}
+
+.mainmenu a{
+    text-decoration: none;
+    color: black;
+}
+
+.right-menu{
+    margin-right: 30px;
+}
+
+.mainmenu ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+.mainmenu{
+    font-family: "Futura Condensed Demi";
+    font-weight: 500;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: space-between;
+    margin-left: 0px;
+    align-items: center;
+}
+
+#more {
+    color: rgb(255, 123, 0);
+}
+
+hr {
+    border: none; 
+    height: 2px; 
+    background-color: black; 
+    margin: 20px 0; 
+}
+
+#try-live{
+    color: blue;
+}
+
+#login{
+    font-size: 20px;
+}
