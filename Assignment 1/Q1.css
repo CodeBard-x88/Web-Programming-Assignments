@@ -1,0 +1,321 @@
+@font-face {
+    font-family: 'FuturaCyrillicLight';
+    src: url('./fonts/FuturaCyrillicLight.ttf');
+}
+
+body{
+    font-family: 'FuturaCyrillicLight', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #000;
+}
+
+.logo{
+    margin-left: 25px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img{
+    width: 90px;
+    height: 50px;
+}
+
+.mainmenu li{
+    list-style: none;
+    margin-right: 25px;
+}
+
+.mainmenu a{
+    text-decoration: none;
+    color: black;
+}
+
+.right-menu{
+    margin-right: 30px;
+}
+
+.hidden{
+    display: none;
+}
+
+.mainmenu ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2px;
+}
+
+.header1-maximized-mobile-bg{ 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100vh;
+    background-color: blue;
+    z-index: -1;
+}
+
+
+.header1-minimized-mobile{
+    display: none;
+}
+
+.mainmenu{
+    font-family: "FuturaCyrillicLight";
+    font-size: 20px;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: space-between;
+    margin-left: 0px;
+    align-items: center;
+}
+
+#more {
+    color: rgb(255, 123, 0);
+}
+
+hr {
+    border: 1px solid rgb(158, 152, 152);
+}
+
+#try-live{
+    color: blue;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+
+.content-section nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.content-section nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+}
+
+.content-section {
+    margin-bottom: 15px;
+    padding: 20px;
+}
+
+.more-options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.option {
+    width: 22%;
+}
+
+.option h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.option p {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+}
+
+.stickyheader{
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    opacity: 70%;
+    padding-top: 8px;
+    height: 50px;
+}
+
+.stickyheader nav ul{
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+}
+
+.stickyheader nav ul li a{
+    text-decoration: none;
+    font-family: "FuturaCyrillicLight";
+    font-weight: bolder;
+    color: black;
+    font-size: 16px;
+}
+
+.heroparent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.hero {
+    background-color: aqua;
+    background-image: url("https://ableton-production.imgix.net/about/header.jpg?fit=crop&auto=format&fm=jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    text-align: center;
+    position: relative;
+    height: 512px;
+    width: 1200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1{
+    font-size: 150px;
+}
+
+.intro{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.intro p{
+    flex-wrap: wrap;
+    font-family: "FuturaCyrillicLight";
+    font-size: 30px;
+    text-align: center;
+}
+
+.intro h2{
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: 50px;
+}
+
+.intro p span{
+    color: blue;
+}
+
+@media(max-width:1272px){
+    .right-menu{
+        font-size: 14px;
+    }
+
+    .left-menu{
+        font-size: 16px;
+    }
+}
+
+@media(max-width:1024px){
+    .header{
+        display: none;
+    }
+
+    #more{
+        display: none;
+    }
+
+    .header1-minimized-mobile{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-family: "FuturaCyrillicLight";
+        font-size: 22px;
+        font-weight: 1000;
+    }
+
+    #minimized-menu{
+        margin-left: 50px;
+        display: flex;
+    }
+
+    #minimized-menu a{
+        text-decoration: none;
+        color: black;
+    }
+
+    #minimized-menu img{
+        margin-left: 5px;
+        margin-top: 15px;
+        width: auto;
+        height: 5px;
+    }
+
+    .mainmenu{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .left-menu{
+        font-size: 25px;
+    }
+
+    .right-menu{
+        font-size: 25px;
+    }
+
+    .mainmenu ul{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .mainmenu a{
+        color: white;
+    }
+
+    .mainmenu span{
+        color: white;
+        font-size: 25px;
+    }
+
+    #try-live{
+        color: white;
+    }
+
+    #login{
+        font-size: 16px;
+    }
+
+    .content-section nav ul {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .content-section nav ul li a{
+        color: white;
+    }
+
+    .content-section h2{
+        color: white
+    }
+
+    .option p{
+        color: white;
+    }
+
+    h3{
+        color: white;
+    }
+
+    .stickyheader{
+        position: static;
+    }
+}
