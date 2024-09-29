@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q1</title>
     <link rel="stylesheet" href="Q1.css">
-
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="Q1.js"></script>
 </head>
 <body>
     <div class="header">
@@ -28,7 +27,7 @@
                     <li><a href="#">Shop</a></li>
                     <li><a href="#">Packs</a></li>
                     <li><a href="#">Help</a></li>
-                    <li><a href="#"><span id="more">More+</span></a></li>
+                    <li><a href="#" id="moreButton"><span id="more">More+</span></a></li>
                 </ul>
             </div>
 
@@ -42,16 +41,58 @@
         </div>        
     </div>
 
-    <div class="header1-minimized">
+    <div class="more-items hidden">
+        <div class="content-section">
+            <h2>More on Ableton.com:</h2>
+            <nav>
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Ableton for the Classroom</a></li>
+                    <li><a href="#">Ableton for Colleges and Universities</a></li>
+                    <li><a href="#">Certified Training</a></li>
+                    <li><a href="#">About Ableton</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Apprenticeships</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+        <div class="content-section">
+            <h2>More from Ableton:</h2>
+            <div class="more-options">
+                <div class="option">
+                    <h3>Loop</h3>
+                    <p>Watch Talks, Performances and Features from Ableton's Summit for Music Makers</p>
+                </div>
+                <div class="option">
+                    <h3>Learning Music</h3>
+                    <p>Learn the fundamentals of music making right in your browser.</p>
+                </div>
+                <div class="option">
+                    <h3>Learning Synths</h3>
+                    <p>Get started with synthesis using a web-based synth and accompanying lessons.</p>
+                </div>
+                <div class="option">
+                    <h3>Making Music</h3>
+                    <p>Some tips from 74 Creative Strategies for Electronic Producers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header1-minimized-mobile">
         <div class="logo">
             <img src="./Images/Ableton_logo.png" alt="ableton logo">
         </div>
 
         <div id="minimized-menu">
-            <a href="#">Menu</a>
+            <a href="#" id="menu-button">Menu</a>
             <img src="Images/arrow-down.png" alt="menu open arrow">
         </div>
     </div>
     <hr id="full-menu">
+
+    <div class="header1-maximized-mobile-bg hidden"></div>
+    <div class="content-mobile-header hidden"></div>
 </body>
 </html>
