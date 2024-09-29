@@ -136,6 +136,84 @@ h2 {
     color: #333;
 }
 
+.stickyheader{
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    opacity: 70%;
+    padding-top: 8px;
+    height: 50px;
+}
+
+.stickyheader nav ul{
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+}
+
+.stickyheader nav ul li a{
+    text-decoration: none;
+    font-family: "FuturaCyrillicLight";
+    font-weight: bolder;
+    color: black;
+    font-size: 16px;
+}
+
+.heroparent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.hero {
+    background-color: aqua;
+    background-image: url("https://ableton-production.imgix.net/about/header.jpg?fit=crop&auto=format&fm=jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    text-align: center;
+    position: relative;
+    height: 512px;
+    width: 1200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1{
+    font-size: 150px;
+}
+
+.intro{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.intro p{
+    flex-wrap: wrap;
+    font-family: "FuturaCyrillicLight";
+    font-size: 30px;
+    text-align: center;
+}
+
+.intro h2{
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: 50px;
+}
+
+.intro p span{
+    color: blue;
+}
+
 @media(max-width:1272px){
     .right-menu{
         font-size: 14px;
@@ -225,7 +303,7 @@ h2 {
         color: white;
     }
 
-    h2{
+    .content-section h2{
         color: white
     }
 
@@ -235,5 +313,9 @@ h2 {
 
     h3{
         color: white;
+    }
+
+    .stickyheader{
+        position: static;
     }
 }
