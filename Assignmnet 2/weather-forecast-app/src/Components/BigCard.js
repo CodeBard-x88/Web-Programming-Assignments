@@ -5,13 +5,38 @@ import SmallCard from './SmallCard';
 
 export default function BigCard(props) {
 
-    function GetNextFourDaysInfo(){
+    function GetNextFourDaysInfo() {
         const dayCards = [];
-        for(var i = 0; i < 4 ; i++){
-            dayCards.push(<SmallCard key={i} />);
+    
+        if (props.fourDayWeather && props.fourDayWeather.list) {
+            let foundDays = 0;
+    
+            for (let i = 0; i < props.fourDayWeather.list.length; i++) {
+                const dayData = props.fourDayWeather.list[i];
+    
+                if (dayData.dt_txt.endsWith("00:00:00")) {
+                    if (foundDays < 4) {
+                        const temp = `${dayData.main.temp.toFixed(0)}°C`;
+                        const date = new Date(dayData.dt_txt);
+                        const day = date.getDay();
+                        const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    
+                        dayCards.push(
+                            <SmallCard key={foundDays} temprature={temp} day={dayNames[day]} />
+                        );
+    
+                        foundDays++; 
+                    }
+                }
+                if (foundDays >= 4) {
+                    break;
+                }
+            }
         }
+    
         return dayCards;
     }
+    
 
   return (
     <div className='flex flex-col justify-center items-center my-10 '>
@@ -38,10 +63,4 @@ BigCard.propTypes = {
     city: PropTypes.string.isRequired
 }
 
-// BigCard.defaultProps = {
-//     alt: "Forecast Icon",
-//     temprature: "28°C",
-//     weather_Description: "Clear Sky",
-//     city: "New York"
-// }
 

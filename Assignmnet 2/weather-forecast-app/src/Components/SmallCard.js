@@ -4,7 +4,7 @@ import CloudSVG from '../Assets/Images/cloudy-cloud.svg';
 
 export default function SmallCard(props) {
   return (
-    <div className='w-24 h-full max-h-24 bg-white bg-opacity-50 border-0 rounded-3xl flex flex-col justify-center items-center'>
+    <div className='w-28 h-full max-h-28 bg-white bg-opacity-50 border-0 rounded-3xl flex flex-col justify-center items-center'>
 
       <h5 className='font-bold'>{props.day}</h5>
       <img src={props.svg} className='w-1/2 h-1/2' alt={props.alt}/>
