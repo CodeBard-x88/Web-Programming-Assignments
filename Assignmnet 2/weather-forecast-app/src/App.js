@@ -17,7 +17,7 @@ function App() {
     const APIkey = process.env.REACT_APP_OPEN_WEATHER_API;
     try {
       const response = await fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${APIkey}`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${APIkey}`
       );
 
       if (!response.ok) {
