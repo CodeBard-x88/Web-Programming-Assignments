@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import CloudSVG from '../Assets/Images/cloudy-cloud.svg';
 import SmallCard from './SmallCard';
 
+
+//For daily weather
 export default function BigCard(props) {
 
     function GetNextFourDaysInfo() {

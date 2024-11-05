@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CloudSVG from '../Assets/Images/cloudy-cloud.svg';
 
+
+//For forecasts
 export default function SmallCard(props) {
   return (
     <div className='w-28 h-full max-h-28 bg-white bg-opacity-50 border-0 rounded-3xl flex flex-col justify-center items-center'>
