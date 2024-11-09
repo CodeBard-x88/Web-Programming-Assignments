@@ -1,32 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-//import CloudSVG from '../Assets/Images/cloudy-cloud.svg';
 import SmallCard from './SmallCard';
 
-
-//For daily weather
 export default function BigCard(props) {
-
-  const [iconUrl, setIconUrl] = useState("");
-
-    async function GetIcon() {
-        const dailyWeatherIcon = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${process.env.REACT_APP_OPEN_WEATHER_API}`);
-            
-        if (!dailyWeatherIcon.ok) {
-          throw new Error(`Response status: ${dailyWeatherIcon.status}`);
-        }
-    
-        const iconJSON = await dailyWeatherIcon.json();
-        const iconCode = iconJSON.weather[0].icon;
-    
-        return `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
-    }
-
-    useEffect(() => {
-        GetIcon().then(setIconUrl).catch(console.error);
-    }, [props.city]); // Runs whenever 'city' changes
-
-
     function GetNextFourDaysInfo() {
         const dayCards = [];
     
@@ -63,7 +39,7 @@ export default function BigCard(props) {
   return (
     <div className='flex flex-col justify-center items-center my-10 '>
       <div className='w-4/5 h-96 bg-white border-0 rounded-3xl flex justify-evenly bg-opacity-50'>
-        <img src={iconUrl} className='w-80 h-80' alt={props.alt} />
+        <img src={props.dailyIconURL} className='w-80 h-80' alt={props.alt} />
         <div className='my-10'>
             <h5 className='text-xl'>Today</h5> 
             <h2 className='text-7xl font-bold'>{props.city}</h2>

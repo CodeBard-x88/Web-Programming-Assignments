@@ -11,6 +11,7 @@ function App() {
   const [dailyTemp, setDailyTemp] = useState("28°C");
   const [dailyWeatherDesc, setDailyWeatherDesc] = useState("Clear Sky");
   const [fourDayWeather, setFourDayWeather] = useState();
+  const [dailyIconURL,setDailyIconURL] = useState();
   
   
   async function GetGeoGraphicCoordinates(city) {
@@ -51,10 +52,12 @@ function App() {
         if (!dailyWeather.ok) {
           throw new Error(`Response status: ${dailyWeather.status}`);
         }
-    
+        
+        
           const dailyWeatherJSON = await dailyWeather.json();
           const tempCelsius = (dailyWeatherJSON.main.temp - 273.15).toFixed(0) + "°C";
           const description = dailyWeatherJSON.weather[0].description;
+          setDailyIconURL(`https://openweathermap.org/img/wn/${dailyWeatherJSON.weather[0].icon}@2x.png`)
           setDailyTemp(tempCelsius);
           setDailyWeatherDesc(description);
 
@@ -84,7 +87,7 @@ function App() {
   return (
     <div className="App bg-cover bg-center h-screen opacity-90" >
       <SearchBar city={city} setCity={setCity}/>
-      <BigCard alt="Forecast Icon" temprature={dailyTemp} weather_Description={dailyWeatherDesc} city={city} fourDayWeather={fourDayWeather}/>
+      <BigCard alt="Forecast Icon" temprature={dailyTemp} weather_Description={dailyWeatherDesc} city={city} fourDayWeather={fourDayWeather} dailyIconURL={dailyIconURL} />
     </div>
   );
 }
