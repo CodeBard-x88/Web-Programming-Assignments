@@ -69,9 +69,10 @@ function App() {
             }
 
             const forecastJSON = await forecast.json();
+            console.log(forecastJSON);
             setFourDayWeather(forecastJSON);
           } catch (error) {
-            console.error("Error fetching weather details:", error.message);
+            console.error("Error fetching forecast details:", error.message);
           }
 
       } catch (error) {

@@ -9,7 +9,7 @@ export default function SmallCard(props) {
     <div className='w-28 h-full max-h-28 bg-white bg-opacity-50 border-0 rounded-3xl flex flex-col justify-center items-center'>
 
       <h5 className='font-bold'>{props.day}</h5>
-      <img src={props.svg} className='w-1/2 h-1/2' alt={props.alt}/>
+      <img src={props.iconURL} className='w-1/2 h-1/2' alt={props.alt}/>
       <h5>{props.temprature}</h5>
     </div>
   );

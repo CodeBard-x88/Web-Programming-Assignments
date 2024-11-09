@@ -18,9 +18,9 @@ export default function BigCard(props) {
                         const date = new Date(dayData.dt_txt);
                         const day = date.getDay();
                         const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    
+                        const iconURL =  `https://openweathermap.org/img/wn/${dayData.weather[0].icon}@2x.png`
                         dayCards.push(
-                            <SmallCard key={foundDays} temprature={temp} day={dayNames[day]} />
+                            <SmallCard key={foundDays} temprature={temp} day={dayNames[day]} iconURL={iconURL} />
                         );
     
                         foundDays++; 
