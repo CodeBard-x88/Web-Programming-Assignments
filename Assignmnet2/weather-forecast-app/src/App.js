@@ -6,6 +6,7 @@ import  { useEffect, useState} from 'react';
 function App() {
 
   const [city, setCity] = useState('New York');
+  const [confirmCity, setConfirmCity] = useState('New York');
   const [latitude, setLatitude] = useState();
   const [longitude, setLongitude] = useState();
   const [dailyTemp, setDailyTemp] = useState("28°C");
@@ -22,13 +23,18 @@ function App() {
       );
 
       if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
+        alert("City not found. Please enter a valid city name.");
+        return;
       }
-
       const json = await response.json();
       if (json.length > 0) {
         setLatitude(json[0].lat);
         setLongitude(json[0].lon);
+        setConfirmCity(city);
+      }
+      else  {
+        alert("City not found. Please enter a valid city name.");
+        return;
       }
     } catch (error) {
       console.error("Error fetching geographic coordinates:", error.message);
@@ -88,7 +94,7 @@ function App() {
   return (
     <div className="App bg-cover bg-center h-screen opacity-90" >
       <SearchBar city={city} setCity={setCity}/>
-      <BigCard alt="Forecast Icon" temprature={dailyTemp} weather_Description={dailyWeatherDesc} city={city} fourDayWeather={fourDayWeather} dailyIconURL={dailyIconURL} />
+      <BigCard alt="Forecast Icon" temprature={dailyTemp} weather_Description={dailyWeatherDesc} city={confirmCity} fourDayWeather={fourDayWeather} dailyIconURL={dailyIconURL} />
     </div>
   );
 }
